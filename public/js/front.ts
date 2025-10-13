@@ -1,5 +1,10 @@
+
 const nav = document.getElementById('navBar');
 const divLogo = document.getElementById('logoDiv');
+
+if (!nav || !divLogo) {
+  throw new Error('Element with id "navBar" or "logoDiv" not found');
+}
 
 const p = document.createElement('p');
 p.textContent = "S&J Parillada y Catering service";
