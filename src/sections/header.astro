@@ -1,0 +1,34 @@
+<nav id="navBar" class="fixed w-full z-20 p-4 bg-negro flex justify-between items-center transition-colors duration-300 bg-gradient-to-b from-black from-20% to-black/50 to-100%">
+    <div id="logoDiv" class="flex items-center">
+         <img src="/images/logo.webp" alt="Logo S&J" class="h-[40px] mr-4"/> 
+    </div>    
+    <ul class="flex gap-4 m-0 p-0 list-none">
+        <li><a href="/" class="text-white font-bold no-underline">Inicio</a></li>
+        <li><a href="/contact" class="text-white font-bold no-underline">Contacto</a></li>
+        <li><a href="/events" class="text-white font-bold no-underline">Eventos</a></li>
+    </ul>
+</nav>
+
+<style>
+    .nav-default {
+        background: linear-gradient(to bottom, black 20%, rgba(0,0,0,0.5) 100%);
+    }
+
+    .nav-scrolled {
+        background-color: var(--background_color_2);
+    }
+    a, li{
+        display: flex;
+        transition: transform 0.6s;
+        transform: translateY(0);
+    }
+    li:hover {
+        border-bottom: 1px solid var(--accent_color); 
+        a {
+            transform: translateY(-5px);
+        }
+    }
+    a:active {
+        color: var(--accent_color);
+    }
+</style>

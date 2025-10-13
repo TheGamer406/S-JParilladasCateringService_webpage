@@ -1,15 +1,37 @@
+.---                            
+import '../styles/global.css'  
+--- 
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>S&J</title>
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="S&J Parilladas y Catering Service: expertos en parrilladas, catering, bodas, 15 años, cumpleaños, cenas navideñas y eventos empresariales en San José, Heredia, Alajuela, Cartago, Puntarenas y toda Costa Rica." />
+        <meta name="keywords" content="catering, parrilladas, bodas, 15 años, cumpleaños, eventos empresariales, cenas navideñas, comidas especiales, Costa Rica, San José, Heredia, Alajuela, Cartago, Puntarenas, servicio de comida" />
+        <meta name="author" content="S&J Parilladas y Catering Service" />
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="S&J Parilladas y Catering Service" />
+        <meta property="og:description" content="Servicio profesional de parrilladas y catering para todo tipo de eventos en Costa Rica. ¡Vamos donde sea!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tusitio.com/" />
+        <meta property="og:image" content="https://tusitio.com/imagen-og.jpg" />
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="S&J Parilladas y Catering Service" />
+        <meta name="twitter:description" content="Parrilladas y catering para bodas, cumpleaños, eventos empresariales y más en Costa Rica." />
+        <meta name="twitter:image" content="https://tusitio.com/imagen-og.jpg" />
+		<!-- Stylesheet -->
+		<link href="src/styles/global.css" rel="stylesheet">
+    </head>
 	<body>
 		<slot />
 	</body>
+	<script src="/js/front.js" defer></script>
 </html>
 
 <style>
@@ -18,5 +40,6 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		background-color: #1a1a1a;
 	}
 </style>
