@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --background_color_1: #1f1f1f;
+  --background_color_2: #121212;
+  --text_color_1: #ffffff;
+  --text_color_2: #cccccc;
+  --accent_color: #ff5722;
+}
+.light_theme {
+  --background_color_1: #ffffff;
+  --background_color_2: #f5f5f5;
+  --text_color_1: #000000;
+  --text_color_2: #333333;
+  --accent_color: #ff5722;
+}
+
+body{
+    @apply font-sans;
+}
