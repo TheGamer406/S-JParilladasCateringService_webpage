@@ -1,0 +1,128 @@
+<script lang="ts">
+  // Rotacion del disco de fotos con el scroll del mouse
+
+    //NOTA: Para la corecta aparecion de los elementos, es necesario que la pagina tenga suficiente contenido
+    // para que se pueda hacer scroll. De lo contrario, los elementos no se mostraran
+    // y utiliza a partir el 14 porciento de scroll para que empieza a aparecer el primer elemento.
+    function getScrollPercentage(){
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (docHeight === 0) return 100;
+        return (scrollTop / docHeight) * 100;
+    }
+
+    window.addEventListener("scroll", () => {
+    const porcentaje = getScrollPercentage();
+    var moment = false;
+    if (porcentaje < 14) {
+        hideElements();
+        moment = false;
+    }
+    if (porcentaje >= 14) {
+        moment = showElements(moment);
+    }
+    });
+
+    function showElements(moment){
+        if (moment == false){
+            
+        }else return true;
+    }
+
+    function hideElements(){
+        //codigo para ocultar los elementos
+    }
+        
+</script>
+
+<!-- Elementos de la rueda de elementos -->
+<div class="eventsCard">
+    <!-- Contenido de la rueda de fotos -->
+     <div class="rotateItem" data-status="out" id="0">
+        <img src="/images/event1.jpg" alt="Evento 1"/>
+        <p>Bodas</p>
+    </div>
+    <div class="rotateItem" data-status="out" id="1">
+        <img src="/images/event1.jpg" alt="Evento 1"/>
+        <p>Empresarial</p>
+    </div>
+    <div class="rotateItem" data-status="out" id="2">
+        <img src="/images/event1.jpg" alt="Evento 1"/>
+        <p>babyshowers</p>
+    </div>
+    <div class="rotateItem" data-status="out" id="3">
+        <img src="/images/event1.jpg" alt="Evento 1"/>
+        <p>Familiares</p>
+    </div>
+    <div class="rotateItem" data-status="out" id="4"> 
+        <img src="/images/event1.jpg" alt="Evento 1"/>
+        <p>graduaciones</p>
+    </div>
+    <div class="rotateItem" data-status="out" id="5">
+        <img src="/images/event1.jpg" alt="Evento 1"/>
+        <p>parrilladas</p>
+    </div>
+    <div class="rotateItem" data-status="out" id="6">
+        <img src="/images/event1.jpg" alt="Evento 1"/>
+        <p>festivales</p>
+    </div>
+    <div class="rotateItem" data-status="out" id="7">
+        <img src="/images/event1.jpg" alt="Evento 1"/>
+        <p>entre otros</p>
+    </div>
+</div>
+
+<style>
+    /* Estilos de lso elementos en rotacion*/
+    .eventsCard{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateX(75%) translateY(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rotateItem{
+    --status: attr(data-status type(<custom-ident>));
+    --dist: 120%; 
+    --dist-n: -120%;
+
+    display: if(
+        style(--status: out): none;
+        else: block;
+    );
+
+    position: absolute;
+    transition: all 0.5s;
+
+    rotate: if(
+        style(--status: top): 90deg;
+        style(--status: topleft): 45deg;
+        style(--status: topright): -45deg;
+        style(--status: midleft): 0deg;
+        style(--status: midright): -180deg;
+        style(--status: bottom): -90deg;
+        style(--status: bottomleft): 45deg;
+        style(--status: bottomright): -45deg;
+    );
+    transform: if(
+        /* Desplazados en horizontla*/
+        style(--status: top): translateX(var(--dist-n));
+        style(--status: bottom): translateX(var(--dist-n));
+        style(--status: midleft):  translateX(var(--dist-n));
+        style(--status: midright): translateX(var(--dist-n));
+
+        /* Desplazados en diagonal*/
+        style(--status: topleft):translateX(var(--dist));
+        style(--status: topright):translateX(var(--dist));
+        style(--status: bottomleft): translateX(var(--dist-n));
+        style(--status: bottomright):translateX(var(--dist-n));
+    );
+    /* Quitar */
+    background-color: gray;
+    width: 200px;
+    height: 112px;
+}
+</style>
