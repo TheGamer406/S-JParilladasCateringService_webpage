@@ -1,5 +1,5 @@
 <script is:inline lang="ts">
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('navBar');
   const logoDiv = document.getElementById('logoDiv');
   const menuBtn = document.getElementById('menuBtn');
@@ -28,8 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', updateLogo);
 
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('nav-scrolled', window.scrollY > 70);
-    nav.classList.toggle('nav-default', window.scrollY <= 70);
+    const isScrolled = window.scrollY > 70;
+
+    nav.classList.toggle('nav-scrolled', isScrolled);
+    nav.classList.toggle('nav-default', !isScrolled);
+
+    if (isScrolled) {
+      if (!logoDiv.contains(title)) {
+        logoDiv.appendChild(title);
+      }
+    } else {
+      if (logoDiv.contains(title)) {
+        logoDiv.removeChild(title);
+      }
+    }
   });
 
   menuBtn.addEventListener('click', () => {
@@ -78,7 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 
   <!-- Menu desktop -->
-  <ul class="hidden lg:flex gap-10 mx-auto list-none">
+
+<ul class="hidden lg:flex fixed top-5 left-1/2 -translate-x-1/2 gap-10 list-none z-50">
     <li><a href="/" class="nav-link">Inicio</a></li>
     <li><a href="/contact" class="nav-link">Contacto</a></li>
     <li><a href="/events" class="nav-link">Eventos</a></li>
