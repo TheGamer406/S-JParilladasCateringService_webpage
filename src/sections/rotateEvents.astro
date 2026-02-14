@@ -12,15 +12,7 @@
     }
 
     window.addEventListener("scroll", () => {
-    const porcentaje = getScrollPercentage();
-    var moment = false;
-    if (porcentaje < 14) {
-        hideElements();
-        moment = false;
-    }
-    if (porcentaje >= 14) {
-        moment = showElements(moment);
-    }
+        
     });
 
     function showElements(moment){
